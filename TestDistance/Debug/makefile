@@ -60,8 +60,8 @@ all: main-build
 main-build: TestDistance.elf secondary-outputs
 
 # Tool invocations
-TestDistance.elf TestDistance.map: $(OBJS) $(USER_OBJS) C:\Users\Admin\STM32CubeIDE\workspace_1.13.2\TestDistance\STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TestDistance.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Admin\STM32CubeIDE\workspace_1.13.2\TestDistance\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TestDistance.elf TestDistance.map: $(OBJS) $(USER_OBJS) C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance\STM32F746ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TestDistance.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
