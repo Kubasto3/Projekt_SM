@@ -2161,3 +2161,1363 @@ Finished building: default.size.stdout
  
 Finished building: TestDistance5.list
  
+16:47:22 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+16:48:10 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+16:50:43 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:16:43 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:18:34 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:19:41 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:234:40: error: 'qr0' undeclared (first use in this function)
+  234 |                           TIM3->CCR2 = qr0;
+      |                                        ^~~
+../Core/Src/main.c:234:40: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+03:19:49 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+23:09:48 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34420	    432	   3736	  38588	   96bc	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+23:16:14 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+23:33:49 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:16:17 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:16:56 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:42:16 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:43:13 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:45:58 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34420	    432	   3736	  38588	   96bc	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:46:13 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-size   TestDistance5.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34420	    432	   3736	  38588	   96bc	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+03:50:23 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34420	    432	   3736	  38588	   96bc	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:59:25 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:31: error: called object is not a function or function pointer
+  249 |                           i=i+1
+      |                               ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+03:59:32 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34436	    432	   3736	  38604	   96cc	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:03:24 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34440	    432	   3736	  38608	   96d0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:05:03 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34456	    432	   3736	  38624	   96e0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:18:59 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34456	    432	   3736	  38624	   96e0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:45:22 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34456	    432	   3736	  38624	   96e0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:46:59 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34456	    432	   3736	  38624	   96e0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:54:23 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34452	    432	   3736	  38620	   96dc	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:03:49 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:05:29 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34396	    432	   3736	  38564	   96a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:40:03 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:252:19: error: 'i1' undeclared (first use in this function); did you mean 'p1'?
+  252 |                   i1++;
+      |                   ^~
+      |                   p1
+../Core/Src/main.c:252:19: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:256:19: error: 'i2' undeclared (first use in this function); did you mean 'p2'?
+  256 |                   i2++;
+      |                   ^~
+      |                   p2
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+05:40:20 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34432	    432	   3736	  38600	   96c8	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:42:26 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34440	    432	   3736	  38608	   96d0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:43:12 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:218:11: warning: unused variable 'State' [-Wunused-variable]
+  218 |   uint8_t State = 0;
+      |           ^~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34432	    436	   3740	  38608	   96d0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:45:20 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34436	    436	   3740	  38612	   96d4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:48:31 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34484	    436	   3740	  38660	   9704	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:50:14 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34496	    436	   3740	  38672	   9710	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:57:06 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:172:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  172 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c:173:17: error: 'p1' undeclared (first use in this function)
+  173 |                 p1 = 400;
+      |                 ^~
+../Core/Src/main.c:173:17: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:174:17: error: 'p2' undeclared (first use in this function)
+  174 |                 p2 = 400;
+      |                 ^~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+05:57:22 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:173:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  173 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34544	    444	   3740	  38728	   9748	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+05:59:06 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:173:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  173 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34548	    444	   3740	  38732	   974c	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:02:55 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:173:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  173 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34548	    444	   3740	  38732	   974c	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:08:30 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:176:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  176 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34548	    444	   3740	  38732	   974c	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:11:34 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:176:46: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  176 |                 HAL_UART_Receive_IT(&huart3, &Received, 2);
+      |                                              ^~~~~~~~~
+      |                                              |
+      |                                              char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:177:22: error: assignment to expression with array type
+  177 |                 text = (&Received);
+      |                      ^
+../Core/Src/main.c:179:30: error: assignment to expression with array type
+  179 |                         text = text[1];
+      |                              ^
+../Core/Src/main.c:180:49: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
+  180 |                         Target_value = atoi(text[1]);
+      |                                             ~~~~^~~
+      |                                                 |
+      |                                                 char
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'char'
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c:182:52: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
+  182 |                         Target_value = atoi(text[0]+text[1]);
+      |                                             ~~~~~~~^~~~~~~~
+      |                                                    |
+      |                                                    int
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'int'
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:224:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  224 |   HAL_UART_Receive_IT(&huart3, &Received, 1);
+      |                                ^~~~~~~~~
+      |                                |
+      |                                char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+06:11:56 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:176:46: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  176 |                 HAL_UART_Receive_IT(&huart3, &Received, 2);
+      |                                              ^~~~~~~~~
+      |                                              |
+      |                                              char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:177:22: error: assignment to expression with array type
+  177 |                 text = (&Received);
+      |                      ^
+../Core/Src/main.c:179:49: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
+  179 |                         Target_value = atoi(text[1]);
+      |                                             ~~~~^~~
+      |                                                 |
+      |                                                 char
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'char'
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c:181:52: warning: passing argument 1 of 'atoi' makes pointer from integer without a cast [-Wint-conversion]
+  181 |                         Target_value = atoi(text[0]+text[1]);
+      |                                             ~~~~~~~^~~~~~~~
+      |                                                    |
+      |                                                    int
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'int'
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:223:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  223 |   HAL_UART_Receive_IT(&huart3, &Received, 1);
+      |                                ^~~~~~~~~
+      |                                |
+      |                                char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+06:12:58 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:176:37: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  176 |                 Target_value = atoi(&Received);
+      |                                     ^~~~~~~~~
+      |                                     |
+      |                                     uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:81:27: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   81 | int     atoi (const char *__nptr);
+      |               ~~~~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34548	    444	   3740	  38732	   974c	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:23:05 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:182:46: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  182 |                 HAL_UART_Receive_IT(&huart3, &Received, 2);
+      |                                              ^~~~~~~~~
+      |                                              |
+      |                                              char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:183:17: warning: implicit declaration of function 'print'; did you mean 'printf'? [-Wimplicit-function-declaration]
+  183 |                 print(Received[0]);
+      |                 ^~~~~
+      |                 printf
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:228:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  228 |   HAL_UART_Receive_IT(&huart3, &Received, 1);
+      |                                ^~~~~~~~~
+      |                                |
+      |                                char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/main.o: in function `HAL_UART_RxCpltCallback':
+C:/Users/Admin/Documents/GitHub/Projekt_SM/TestDistance5/Debug/../Core/Src/main.c:183: undefined reference to `print'
+D:/ST/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/Admin/Documents/GitHub/Projekt_SM/TestDistance5/Debug/../Core/Src/main.c:184: undefined reference to `print'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: TestDistance5.elf] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+06:24:09 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:182:46: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  182 |                 HAL_UART_Receive_IT(&huart3, &Received, 2);
+      |                                              ^~~~~~~~~
+      |                                              |
+      |                                              char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:183:32: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
+  183 |                 printf(Received[0]);
+      |                        ~~~~~~~~^~~
+      |                                |
+      |                                char
+In file included from ../Core/Src/main.c:25:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdio.h:210:17: note: expected 'const char * restrict' but argument is of type 'char'
+  210 | int     printf (const char *__restrict, ...)
+      |                 ^
+../Core/Src/main.c:184:32: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
+  184 |                 printf(Received[1]);
+      |                        ~~~~~~~~^~~
+      |                                |
+      |                                char
+In file included from ../Core/Src/main.c:25:
+D:\ST\STM32CubeIDE_1.13.2\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.1.202309131626\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdio.h:210:17: note: expected 'const char * restrict' but argument is of type 'char'
+  210 | int     printf (const char *__restrict, ...)
+      |                 ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:228:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  228 |   HAL_UART_Receive_IT(&huart3, &Received, 1);
+      |                                ^~~~~~~~~
+      |                                |
+      |                                char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  33924	    444	   3740	  38108	   94dc	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:26:26 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:182:46: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  182 |                 HAL_UART_Receive_IT(&huart3, &Received, 2);
+      |                                              ^~~~~~~~~
+      |                                              |
+      |                                              char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:184:44: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  184 |                 HAL_UART_Transmit(&huart3, &Received[0], 1, HAL_MAX_DELAY);
+      |                                            ^~~~~~~~~~~~
+      |                                            |
+      |                                            char *
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1553:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1553 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:185:44: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  185 |                 HAL_UART_Transmit(&huart3, &Received[1], 1, HAL_MAX_DELAY);
+      |                                            ^~~~~~~~~~~~
+      |                                            |
+      |                                            char *
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1553:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1553 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:229:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  229 |   HAL_UART_Receive_IT(&huart3, &Received, 1);
+      |                                ^~~~~~~~~
+      |                                |
+      |                                char (*)[2]
+In file included from ../Core/Inc/stm32f7xx_hal_conf.h:415,
+                 from ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:1556:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[2]'
+ 1556 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  29740	    352	   3408	  33500	   82dc	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:31:55 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  33980	    444	   3740	  38164	   9514	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:40:34 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:176:33: error: 'tx_buffer' undeclared (first use in this function); did you mean 'setbuffer'?
+  176 |     int Target = strtol((char*)&tx_buffer[1], 0, 10);
+      |                                 ^~~~~~~~~
+      |                                 setbuffer
+../Core/Src/main.c:176:33: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:184:45: error: 'tx_msg_len' undeclared (first use in this function)
+  184 |     HAL_UART_Receive_IT(&huart3, tx_buffer, tx_msg_len);
+      |                                             ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+06:41:06 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34600	    444	   3772	  38816	   97a0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:42:05 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34600	    444	   3772	  38816	   97a0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:43:31 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34604	    444	   3772	  38820	   97a4	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:44:56 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:179:21: warning: unused variable 'p2' [-Wunused-variable]
+  179 |                 int p2 = 400;
+      |                     ^~
+../Core/Src/main.c:178:21: warning: unused variable 'p1' [-Wunused-variable]
+  178 |                 int p1 = 400;
+      |                     ^~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34608	    444	   3772	  38824	   97a8	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:45:44 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:179:21: warning: unused variable 'p2' [-Wunused-variable]
+  179 |                 int p2 = 400;
+      |                     ^~
+../Core/Src/main.c:178:21: warning: unused variable 'p1' [-Wunused-variable]
+  178 |                 int p1 = 400;
+      |                     ^~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34616	    444	   3772	  38832	   97b0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:46:39 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:179:21: warning: unused variable 'p2' [-Wunused-variable]
+  179 |                 int p2 = 400;
+      |                     ^~
+../Core/Src/main.c:178:21: warning: unused variable 'p1' [-Wunused-variable]
+  178 |                 int p1 = 400;
+      |                     ^~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34616	    444	   3772	  38832	   97b0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+06:59:51 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:179:21: warning: unused variable 'p2' [-Wunused-variable]
+  179 |                 int p2 = 400;
+      |                     ^~
+../Core/Src/main.c:178:21: warning: unused variable 'p1' [-Wunused-variable]
+  178 |                 int p1 = 400;
+      |                     ^~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34664	    444	   3772	  38880	   97e0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 

@@ -95,7 +95,7 @@ uint32_t IC_Val2 = 0;
 uint32_t Difference = 0;
 uint8_t Is_First_Captured = 0;
 uint8_t Distance  = 0;
-uint8_t Target_value = 0;
+uint8_t Target_value = 5;
 uint8_t Received;
 
 #define TRIG_PIN GPIO_PIN_13
@@ -130,7 +130,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 				Difference = (0xffff - IC_Val1) + IC_Val2;
 			}
 
-			Distance = Difference * .034/2;
+			Distance = Difference * 0.034/2;
 			Is_First_Captured = 0;
 
 
@@ -165,15 +165,30 @@ int __io_putchar(int ch)
   return 1;
 }
 
+int p1 = 400;
+int p2 = 400;
+
+uint8_t tx_buffer[32];
 
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	if (huart == &huart3) {
-		Target_value = atoi(&Received);
-		HAL_UART_Receive_IT(&huart3, &Received, 1);
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if(huart == &huart3)
+	{
+		int p1 = 400;
+		int p2 = 400;
+
+		int Target = strtol((char*)&tx_buffer[1], 0, 10);
+
+		if(tx_buffer[0] == '0' )
+			Target_value = Target;
+		else if(tx_buffer[0] == '1')
+			Target_value = Target + 10;
+
+
+		HAL_UART_Receive_IT(&huart3, tx_buffer, 2);
 	}
 }
-
 /* USER CODE END 0 */
 
 /**
@@ -211,11 +226,11 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
-  HAL_UART_Receive_IT(&huart3, &Received, 1);
+  HAL_UART_Receive_IT(&huart3, tx_buffer, 2);
 
   HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_2);
-  uint8_t State = 0;
+
 
   /* USER CODE END 2 */
 
@@ -226,34 +241,50 @@ int main(void)
 
 	  HCSR04_Read();
 	  HAL_Delay(200);
-	  printf("value = %u\n", Distance);
 
-	  if(State == 1){
-		  if(Distance <= Target_value){
-			  TIM3->CCR1 = 0;
-			  TIM3->CCR2 = 140;
-		  }else{
-			  State = 0;
-			  delay(100);
-		  }
+	  if(p1>999){
+		  p1= 999;
 	  }
 
-	  if(State == 0){
-		  if(Distance >= 25-3-Target_value){
-			  TIM3->CCR1 = 140;
-			  TIM3->CCR2 = 0;
-		  }else{
-			  State = 1;
-			  delay(100);
-		  }
+	  if(p2>999){
+		  p2= 999;
 	  }
 
+	  if(p1<400){
+		  p1 = 400;
+	  }
 
-      if (State == 1) {
-    	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
-      } else {
-    	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
-      }
+	  if(p2<400){
+		  p2 = 400;
+	  }
+
+	  printf("Current distance = %u\n", Distance);
+	  printf("Target value: = %u\n", Target_value);
+	  printf("p1 = %u\n", p1);
+	  printf("p2 = %u\n", p2);
+
+
+	  if(Distance < Target_value){
+		  p1 = p1-1;
+		  p2 = p2+2;
+
+		  TIM3->CCR1 = p1;
+		  TIM3->CCR2 = p2;
+		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
+		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
+	  }else if(Distance > Target_value){
+		  p1 = p1+2;
+		  p2 = p2-1;
+
+		  TIM3->CCR1 = p1;
+		  TIM3->CCR2 = p2;
+		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
+		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
+	  }else{
+		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
+		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
+	  }
+
 
     /* USER CODE END WHILE */
 
@@ -431,9 +462,9 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 260;
+  htim3.Init.Prescaler = 0;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 255;
+  htim3.Init.Period = 1000;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
