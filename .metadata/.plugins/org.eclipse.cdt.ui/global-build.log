@@ -3521,3 +3521,461 @@ Finished building: default.size.stdout
  
 Finished building: TestDistance5.list
  
+07:15:07 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:179:21: warning: unused variable 'p2' [-Wunused-variable]
+  179 |                 int p2 = 300;
+      |                     ^~
+../Core/Src/main.c:178:21: warning: unused variable 'p1' [-Wunused-variable]
+  178 |                 int p1 = 300;
+      |                     ^~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  34664	    444	   3772	  38880	   97e0	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+07:29:01 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f7xx_hal_msp.d" -MT"Core/Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f7xx_it.d" -MT"Core/Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f7xx_it.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:178:21: warning: unused variable 'p2' [-Wunused-variable]
+  178 |                 int p2 = 300;
+      |                     ^~
+../Core/Src/main.c:177:21: warning: unused variable 'p1' [-Wunused-variable]
+  177 |                 int p1 = 300;
+      |                     ^~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:204:5: warning: 'main' is normally a non-static function [-Wmain]
+  204 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:357:13: error: invalid storage class for function 'MX_ETH_Init'
+  357 | static void MX_ETH_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:406:13: error: invalid storage class for function 'MX_TIM1_Init'
+  406 | static void MX_TIM1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:456:13: error: invalid storage class for function 'MX_TIM3_Init'
+  456 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:519:13: error: invalid storage class for function 'MX_TIM4_Init'
+  519 | static void MX_TIM4_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:564:13: error: invalid storage class for function 'MX_USART3_UART_Init'
+  564 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:599:13: error: invalid storage class for function 'MX_USB_OTG_FS_PCD_Init'
+  599 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:634:13: error: invalid storage class for function 'MX_GPIO_Init'
+  634 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:713:1: error: expected declaration or statement at end of input
+  713 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:81:13: warning: 'MX_GPIO_Init' used but never defined
+   81 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:82:13: warning: 'MX_ETH_Init' used but never defined
+   82 | static void MX_ETH_Init(void);
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:83:13: warning: 'MX_USART3_UART_Init' used but never defined
+   83 | static void MX_USART3_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:84:13: warning: 'MX_USB_OTG_FS_PCD_Init' used but never defined
+   84 | static void MX_USB_OTG_FS_PCD_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:85:13: warning: 'MX_TIM1_Init' used but never defined
+   85 | static void MX_TIM1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:86:13: warning: 'MX_TIM3_Init' used but never defined
+   86 | static void MX_TIM3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:87:13: warning: 'MX_TIM4_Init' used but never defined
+   87 | static void MX_TIM4_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:704:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  704 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:634:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  634 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:599:13: warning: 'MX_USB_OTG_FS_PCD_Init' defined but not used [-Wunused-function]
+  599 | static void MX_USB_OTG_FS_PCD_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:564:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  564 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:519:13: warning: 'MX_TIM4_Init' defined but not used [-Wunused-function]
+  519 | static void MX_TIM4_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:456:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+  456 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:406:13: warning: 'MX_TIM1_Init' defined but not used [-Wunused-function]
+  406 | static void MX_TIM1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:357:13: warning: 'MX_ETH_Init' defined but not used [-Wunused-function]
+  357 | static void MX_ETH_Init(void)
+      |             ^~~~~~~~~~~
+../Core/Src/main.c:307:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  307 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:204:5: warning: 'main' defined but not used [-Wunused-function]
+  204 | int main(void)
+      |     ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+07:29:24 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:178:21: warning: unused variable 'p2' [-Wunused-variable]
+  178 |                 int p2 = 300;
+      |                     ^~
+../Core/Src/main.c:177:21: warning: unused variable 'p1' [-Wunused-variable]
+  177 |                 int p1 = 300;
+      |                     ^~
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35160	    444	   3844	  39448	   9a18	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+07:35:13 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:30:08 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:38:00 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35188	    444	   3844	  39476	   9a34	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:39:38 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35192	    444	   3844	  39480	   9a38	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:40:04 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35192	    444	   3844	  39480	   9a38	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:45:59 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:47:54 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:49:16 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:53:51 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:54:39 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:56:20 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:57:29 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+03:59:39 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:02:36 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35168	    444	   3844	  39456	   9a20	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:04:59 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35172	    444	   3844	  39460	   9a24	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:07:50 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35192	    444	   3844	  39480	   9a38	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:14:47 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35184	    444	   3844	  39472	   9a30	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:29:49 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35184	    444	   3844	  39472	   9a30	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:36:36 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35184	    444	   3844	  39472	   9a30	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:37:54 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35184	    444	   3844	  39472	   9a30	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:46:08 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-size   TestDistance5.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35184	    444	   3844	  39472	   9a30	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+04:49:20 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35184	    444	   3844	  39472	   9a30	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 
+04:49:49 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-size   TestDistance5.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35184	    444	   3844	  39472	   9a30	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+04:50:00 **** Incremental Build of configuration Debug for project TestDistance5 ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TestDistance5.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\Admin\Documents\GitHub\Projekt_SM\TestDistance5\STM32F746ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestDistance5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TestDistance5.elf
+ 
+arm-none-eabi-size   TestDistance5.elf 
+arm-none-eabi-objdump -h -S  TestDistance5.elf  > "TestDistance5.list"
+   text	   data	    bss	    dec	    hex	filename
+  35184	    444	   3844	  39472	   9a30	TestDistance5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TestDistance5.list
+ 

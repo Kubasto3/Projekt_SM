@@ -66,6 +66,7 @@ ETH_HandleTypeDef heth;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim4;
 
 UART_HandleTypeDef huart3;
 
@@ -83,6 +84,7 @@ static void MX_USART3_UART_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -96,12 +98,9 @@ uint32_t Difference = 0;
 uint8_t Is_First_Captured = 0;
 uint8_t Distance  = 0;
 uint8_t Target_value = 5;
-uint8_t Received;
 
 #define TRIG_PIN GPIO_PIN_13
 #define TRIG_PORT GPIOF
-
-
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
@@ -165,8 +164,8 @@ int __io_putchar(int ch)
   return 1;
 }
 
-int p1 = 400;
-int p2 = 400;
+int p1 = 300;
+int p2 = 300;
 
 uint8_t tx_buffer[32];
 
@@ -175,8 +174,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if(huart == &huart3)
 	{
-		int p1 = 400;
-		int p2 = 400;
+		p1 = 300;
+		p2 = 300;
 
 		int Target = strtol((char*)&tx_buffer[1], 0, 10);
 
@@ -188,6 +187,14 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 		HAL_UART_Receive_IT(&huart3, tx_buffer, 2);
 	}
+}
+
+void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim)
+{
+  if (htim->Instance == htim4.Instance)
+  {
+	  HCSR04_Read();
+  }
 }
 /* USER CODE END 0 */
 
@@ -224,12 +231,15 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
   HAL_UART_Receive_IT(&huart3, tx_buffer, 2);
 
   HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_2);
+
+  HAL_TIM_Base_Start_IT(&htim4);
 
 
   /* USER CODE END 2 */
@@ -239,23 +249,20 @@ int main(void)
   while (1)
   {
 
-	  HCSR04_Read();
-	  HAL_Delay(200);
-
-	  if(p1>999){
-		  p1= 999;
+	  if(p1>1800){
+		  p1= 1800;
 	  }
 
-	  if(p2>999){
-		  p2= 999;
+	  if(p2>1800){
+		  p2= 1800;
 	  }
 
-	  if(p1<400){
-		  p1 = 400;
+	  if(p1<300){
+		  p1 = 300;
 	  }
 
-	  if(p2<400){
-		  p2 = 400;
+	  if(p2<300){
+		  p2 = 300;
 	  }
 
 	  printf("Current distance = %u\n", Distance);
@@ -266,14 +273,14 @@ int main(void)
 
 	  if(Distance < Target_value){
 		  p1 = p1-1;
-		  p2 = p2+2;
+		  p2 = p2+1;
 
 		  TIM3->CCR1 = p1;
 		  TIM3->CCR2 = p2;
 		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
 		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
 	  }else if(Distance > Target_value){
-		  p1 = p1+2;
+		  p1 = p1+1;
 		  p2 = p2-1;
 
 		  TIM3->CCR1 = p1;
@@ -281,6 +288,11 @@ int main(void)
 		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
 		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
 	  }else{
+		  TIM3->CCR1 = 100;
+		  TIM3->CCR2 = 100;
+
+
+
 		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
 		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
 	  }
@@ -502,6 +514,51 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 2 */
   HAL_TIM_MspPostInit(&htim3);
+
+}
+
+/**
+  * @brief TIM4 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM4_Init(void)
+{
+
+  /* USER CODE BEGIN TIM4_Init 0 */
+
+  /* USER CODE END TIM4_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM4_Init 1 */
+
+  /* USER CODE END TIM4_Init 1 */
+  htim4.Instance = TIM4;
+  htim4.Init.Prescaler = 72-1;
+  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim4.Init.Period = 65535;
+  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim4, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM4_Init 2 */
+
+  /* USER CODE END TIM4_Init 2 */
 
 }
 
