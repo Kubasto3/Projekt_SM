@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "string.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -43,26 +42,6 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-#if defined ( __ICCARM__ ) /*!< IAR Compiler */
-#pragma location=0x2004c000
-ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
-#pragma location=0x2004c0a0
-ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
-
-#elif defined ( __CC_ARM )  /* MDK ARM Compiler */
-
-__attribute__((at(0x2004c000))) ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
-__attribute__((at(0x2004c0a0))) ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
-
-#elif defined ( __GNUC__ ) /* GNU Compiler */
-ETH_DMADescTypeDef DMARxDscrTab[ETH_RX_DESC_CNT] __attribute__((section(".RxDecripSection"))); /* Ethernet Rx DMA Descriptors */
-ETH_DMADescTypeDef DMATxDscrTab[ETH_TX_DESC_CNT] __attribute__((section(".TxDecripSection")));   /* Ethernet Tx DMA Descriptors */
-
-#endif
-
-ETH_TxPacketConfig TxConfig;
-
-ETH_HandleTypeDef heth;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim3;
@@ -79,7 +58,6 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_ETH_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_USB_OTG_FS_PCD_Init(void);
 static void MX_TIM1_Init(void);
@@ -182,13 +160,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		p1 = 300; // Restart silników;
 		p2 = 300;
 
-		int Target = strtol((char*)&tx_buffer[1], 0, 10);
-
-		if(tx_buffer[0] == '0' )
+		int Target = strtol((char*)&tx_buffer, 0, 10);
 			Target_value = Target;
-		else if(tx_buffer[0] == '1')
-			Target_value = Target + 10;
-
 
 		HAL_UART_Receive_IT(&huart3, tx_buffer, 2);
 	}
@@ -196,10 +169,52 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef *htim)
 {
-	//Stała częstotliwość próbkowania: 1MHz ; wywołanie systemu pomiaru
+	//Stała częstotliwość próbkowania: 113Hz ; wywołanie systemu pomiaru
   if (htim->Instance == htim4.Instance)
   {
-	  HCSR04_Read();
+	  HCSR04_Read(); // Wywołanie pomiaru
+
+	  ////////////ograniczenie prędkości ze względu na zacinanie się śmigieł/////////////////
+	  if(p1>1900){
+		  p1= 1900;
+	  }
+
+	  if(p2>1900){
+		  p2= 1900;
+	  }
+
+	  if(p1<300){
+		  p1 = 300;
+	  }
+
+	  if(p2<300){
+		  p2 = 300;
+	  }
+	  ////////////////////////////////
+
+	  // Główny algorymt sterowania, położenie wagonika zwiększa/zmniejsza wypełnienie PWM kontrolujące śmigła.
+	  if(Distance < Target_value){
+		  p1 = p1-1;
+		  p2 = p2+1;
+
+		  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,p1);
+		  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,p2);
+		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
+		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
+	  }else if(Distance > Target_value){
+		  p1 = p1+1;
+		  p2 = p2-1;
+
+		  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,p1);
+		  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,p2);
+		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
+		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
+	  }else{
+		  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,250);
+		  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,250);
+		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
+		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
+	  }
   }
 }
 /* USER CODE END 0 */
@@ -232,7 +247,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_ETH_Init();
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   MX_TIM1_Init();
@@ -254,52 +268,14 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  if(p1>1800){
-		  p1= 1800;
-	  }
-
-	  if(p2>1800){
-		  p2= 1800;
-	  }
-
-	  if(p1<300){
-		  p1 = 300;
-	  }
-
-	  if(p2<300){
-		  p2 = 300;
-	  }
-
+	  // Nadanie komunikacji z systemem.
+	  HAL_Delay(2000);
+	  printf("------------------------\n");
 	  printf("Current distance = %u\n", Distance);
 	  printf("Target value: = %u\n", Target_value);
 	  printf("p1 = %u\n", p1);
 	  printf("p2 = %u\n", p2);
-
-
-	  if(Distance < Target_value){
-		  p1 = p1-1;
-		  p2 = p2+1;
-
-		  TIM3->CCR1 = p1;
-		  TIM3->CCR2 = p2;
-		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
-		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
-	  }else if(Distance > Target_value){
-		  p1 = p1+1;
-		  p2 = p2-1;
-
-		  TIM3->CCR1 = p1;
-		  TIM3->CCR2 = p2;
-		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
-		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
-	  }else{
-		  TIM3->CCR1 = 100;
-		  TIM3->CCR2 = 100;
-
-		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
-		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
-	  }
+	  printf("------------------------\n");
 
     /* USER CODE END WHILE */
 
@@ -356,55 +332,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-}
-
-/**
-  * @brief ETH Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_ETH_Init(void)
-{
-
-  /* USER CODE BEGIN ETH_Init 0 */
-
-  /* USER CODE END ETH_Init 0 */
-
-   static uint8_t MACAddr[6];
-
-  /* USER CODE BEGIN ETH_Init 1 */
-
-  /* USER CODE END ETH_Init 1 */
-  heth.Instance = ETH;
-  MACAddr[0] = 0x00;
-  MACAddr[1] = 0x80;
-  MACAddr[2] = 0xE1;
-  MACAddr[3] = 0x00;
-  MACAddr[4] = 0x00;
-  MACAddr[5] = 0x00;
-  heth.Init.MACAddr = &MACAddr[0];
-  heth.Init.MediaInterface = HAL_ETH_RMII_MODE;
-  heth.Init.TxDesc = DMATxDscrTab;
-  heth.Init.RxDesc = DMARxDscrTab;
-  heth.Init.RxBuffLen = 1524;
-
-  /* USER CODE BEGIN MACADDRESS */
-
-  /* USER CODE END MACADDRESS */
-
-  if (HAL_ETH_Init(&heth) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  memset(&TxConfig, 0 , sizeof(ETH_TxPacketConfig));
-  TxConfig.Attributes = ETH_TX_PACKETS_FEATURES_CSUM | ETH_TX_PACKETS_FEATURES_CRCPAD;
-  TxConfig.ChecksumCtrl = ETH_CHECKSUM_IPHDR_PAYLOAD_INSERT_PHDR_CALC;
-  TxConfig.CRCPadCtrl = ETH_CRC_PAD_INSERT;
-  /* USER CODE BEGIN ETH_Init 2 */
-
-  /* USER CODE END ETH_Init 2 */
-
 }
 
 /**
@@ -479,7 +406,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 0;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 1000;
+  htim3.Init.Period = 2000;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -509,6 +436,7 @@ static void MX_TIM3_Init(void)
   {
     Error_Handler();
   }
+  sConfigOC.Pulse = 1;
   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
@@ -539,7 +467,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 72-1;
+  htim4.Init.Prescaler = 31;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 65535;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -671,6 +599,22 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(USER_Btn_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : RMII_MDC_Pin RMII_RXD0_Pin RMII_RXD1_Pin */
+  GPIO_InitStruct.Pin = RMII_MDC_Pin|RMII_RXD0_Pin|RMII_RXD1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : RMII_REF_CLK_Pin RMII_MDIO_Pin RMII_CRS_DV_Pin */
+  GPIO_InitStruct.Pin = RMII_REF_CLK_Pin|RMII_MDIO_Pin|RMII_CRS_DV_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pins : LD1_Pin LD3_Pin LD2_Pin */
   GPIO_InitStruct.Pin = LD1_Pin|LD3_Pin|LD2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -685,6 +629,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : RMII_TXD1_Pin */
+  GPIO_InitStruct.Pin = RMII_TXD1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
+  HAL_GPIO_Init(RMII_TXD1_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : USB_PowerSwitchOn_Pin */
   GPIO_InitStruct.Pin = USB_PowerSwitchOn_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -697,6 +649,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(USB_OverCurrent_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : RMII_TX_EN_Pin RMII_TXD0_Pin */
+  GPIO_InitStruct.Pin = RMII_TX_EN_Pin|RMII_TXD0_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
